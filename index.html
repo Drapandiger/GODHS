@@ -43,6 +43,9 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -215,15 +218,16 @@
         <div class="content has-text-justified has-text-centered">
           <h3 class="title is-4">GODHS Framework</h3>
           <img src="static/images/fig2.png" alt="GODHS Framework" />
-          <p>(todo)</p>
+          <p><b>Complete Architecture of the GODHS System:</b> First, the user provides the target object through natural language input, which is then processed by a LLM to extract semantic intent. The robot captures geometric data using LiDAR and RGB images via cameras, generating a topological map with room names through the language model. Within the known map, the LLM-driven prioritization ranks rooms based on the likelihood of containing the target object and navigates to them sequentially. Within each room, the robot detects candidate objects through visual object detection, then utilizes the LLM to analyze whether they are carriers and ranks all collected carriers by the probability of containing the target. For each carrier, the LLM plans a hierarchical search strategy: first analyzing geometric features to identify subregions worth searching (top, interior, etc.), then prioritizing and searching these subregions according to probabilities assigned by the LLM. The loop terminates when the LLM verifies target recognition through visual-language grounding of sensor data.</p>
           
           <h3 class="title is-4">Model Chain Design</h3>
           <img src="static/images/fig3.png" alt="Model Chain Design" />
-          <p>(todo)</p>
+          <p><b>Chain-of-Refinement (Left):</b> Data Cleaning and Correcting ensure the input and output are structurally valid and semantically coherent, while Processing executes the core task with Knowledge as Augmentation and Feedback to guarantee the result.<br>
+          <b>Prompt Design (Right):</b> Input embedding receives the input information, output constraints standardize lexico-syntactic results, task instructions describe goal-oriented content, feature description provides constrained descriptions of features, and there are also additional information and examples.</p>
           
           <h3 class="title is-4">Pose Dictionary Estimation</h3>
           <img src="static/images/fig4.png" alt="Pose Dictionary Estimation" />
-          <p>(todo)</p>
+          <p><b>Estimation of Pose Dictionaries between Chassis and End-Effector:</b> To ensure the mobile robot advances sequentially around the carrier while enabling a single chassis (CH) pose to correspond to multiple end-effector (EE) configurations, we generate search trajectories for the chassis and the end-effector separately, and to have the chassis move forward around the carrier while ensuring that the distance traveled by the end of the actuator at each chassis position is minimized. The process involves five sequential stages: (1) extraction of <b>geometric features</b> \( \mathcal{M} \) from point cloud data, (2) generation and selection of <b>EE poses</b> \( \mathcal{P_{EE}} \), (3) fast evaluation and selection of <b>chassis poses</b> \( \mathcal{P_{CH}} \) via geometric solution, (4) validation of the <b>relation between CH and EE</b> \( \mathcal{P_{CH}^{EE}} \) with subsequent inverse kinematics (IK) solving, and (5) sorting of the resulting <b>pose mappings</b> \( \mathcal{P}_{CH}^{EE} \) for sequential execution by polar angle sorting and lexicographical Sorting. </p>
         </div>
       </div>
     </div>
