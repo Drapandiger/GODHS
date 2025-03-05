@@ -234,6 +234,153 @@
   </div>
 </section>
 
+<section class="section hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+          <h2 class="title is-3">Simulation</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <!-- Video items 1-14 -->
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/1.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                We used the DARKO robot and tested it in a Flat environment, built grid maps for each room using LiDAR and captured semantic information with a camera.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/2.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                For example, we detected bed and wardrobe in this room. Using prompts, the language model identified the room as a bedroom and marked it on the map.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/3.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                After the mobile manipulator scanned the entire scene, the semantic map was generated.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/4.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                Input the target orange to search and sort the rooms based on this target. As shown in prompt and sorting results, we prioritize the living room and kitchen.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/5.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                The system first directs the robot to the living room. In the living room, the robot uses its manipulator for initial observation.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/6.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                During this process, the system identifies several objects. The language model classifies the carriers, such as the TV shelf, billiard table, and sofa.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/7.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                It then determines the order in which carriers should be searched. 
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/8.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                Here, we only search the coffee table.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/9.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                The language model predicts that the top of the coffee table is worth checking.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/10.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                The robot inspects the top of the coffee table but finds the target is not there.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/11.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                After failing to locate the target in the living room, it navigates to the kitchen.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/12.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                It confirms carriers like the oven, fridge, and microwave. From the language model, the carriers worth searching are the fridge and the kitchen table.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/13.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                Then, the language model decides to prioritize searching inside the fridge.
+              </h2>
+            </div>
+            <div class="item">
+              <video muted autoplay loop playsinline style="width: 100%; height: auto">
+                <source src="static/videos/14.mp4" type="video/mp4">
+              </video>
+              <h2 class="subtitle has-text-centered">
+                Ultimately, the target is found inside the fridge in the kitchen, successfully concluding the search process.
+              </h2>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* 隐藏控制条 */
+video::-webkit-media-controls {
+  display: none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+</style>
+
+<section class="section" id="BibTeX">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
+    <pre><code>Coming soon</code></pre>
+  </div>
+</div>
+  </div>
+</section>
 
 
 
