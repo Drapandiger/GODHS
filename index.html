@@ -237,9 +237,10 @@
 <section class="section hero is-light is-small">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-centered has-text-centered">
+      <div class="columns is-centered">
         <div class="column is-three-fifths">
-          <h2 class="title is-3">Simulation</h2>
+          <h2 class="title is-3 has-text-centered">Experiment</h2>
+          <h3 class="title is-4 is-left">Simulation</h3>
           <div id="results-carousel" class="carousel results-carousel">
             <!-- Video items 1-14 -->
             <div class="item">
@@ -354,7 +355,31 @@
                 Ultimately, the target is found <i>inside</i> the <i>fridge</i> in the <i>kitchen</i>, successfully concluding the search process.
               </h2>
             </div>
-          </div>    
+          </div>
+          <h3 class="title is-4">Results</h3> 
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+             <!-- Your image here -->
+             <img src="static/images/tab1.png" alt="MY ALT TEXT"/>
+             <h2 class="subtitle has-text-centered">
+              This table compares four search strategies across success rate, search rates and overall search rates. our method can effectively perform the search tasks while significantly reducing search costs, thereby validating the feasibility of GODHS. However, the experimental results demonstrate that the search success rate progressively decreases following semantic analysis. Traditional methods fail in narrow spaces due to grid-based maps being unable to model 3D semantic relationships, while GODHS faces additional limitations from generative language models, particularly the symbol grounding problem.
+             </h2>
+           </div>
+           <div class="item">
+             <!-- Your image here -->
+             <img src="static/images/tab2.png" alt="MY ALT TEXT"/>
+             <h2 class="subtitle has-text-centered">
+              The performance differences among three chain configurations across five tasks are as follows: Room Reasoning shows minimal variation across configurations due to its single-output nature. In contrast, Room Sorting, Carrier Classification, and Carrier Sorting exhibit significant performance gains with the Protective step, driven by their high output volume, while Feature Reasoning sees limited improvement due to fewer outputs. Additionally, Carrier Classification, Carrier Sorting, and Feature Reasoning benefit markedly from augmentation due to task complexity and pre-training knowledge gaps, whereas Room Sorting displays an opposite trend.
+             </h2>
+           </div>
+           <div class="item">
+             <!-- Your image here -->
+             <img src="static/images/tab3.png" alt="MY ALT TEXT"/>
+             <h2 class="subtitle has-text-centered">
+              We evaluate three key performance metrics: the EE Path Length, which represents the ratio of the total EE travel distance to the theoretical shortest EE path; the CH Path Length, defined similarly for the CH poses; and the Execution Time Ratio, which is the ratio of execution time with a lower value indicating better efficiency. Table presents the comparative results, demonstrating that lexicographical sorting effectively reduces EE path length while polar angle sorting significantly improves CH path efficiency. When both strategies are applied, the method achieves the highest optimization in both path length and execution time, confirming its effectiveness in improving motion planning.
+            </h2>
+          </div>
+       </div>    
         </div>
       </div>
     </div>
