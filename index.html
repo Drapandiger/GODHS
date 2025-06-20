@@ -55,7 +55,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Language-Exclusive Mobile Manipulation for Efficient Object Search in Indoor Environments</h1>
+            <h1 class="title is-1 publication-title">Language-Enhanced Mobile Manipulation for Efficient Object Search in Indoor Environments</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -77,17 +77,7 @@
                   </div>
 
                   <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="static/pdfs/TargetSearch.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+
 
                     <!-- Video Link. -->
                     <span class="link-block">
@@ -100,16 +90,7 @@
                     </a>
                   </span>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/Drapandiger/GODHS_code" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+
  
                 <!-- ArXiv abstract Link -->
 <!--
@@ -123,7 +104,7 @@
                 </a>
               </span>
 -->              
-            </div>
+
           </div>
         </div>
       </div>
@@ -181,7 +162,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Enabling robots to efficiently search for and identify objects in complex, unstructured environments is critical for diverse applications ranging from household assistance to industrial automation. However, traditional scene representations typically capture only static semantics and lack interpretable contextual reasoning, limiting their ability to guide object search in completely unfamiliar settings—where every object’s relational information is vital. To address this challenge, we propose a language-enhanced hierarchical navigation framework that tightly integrates semantic perception and spatial reasoning. Our method, Goal-Oriented Dynamically Heuristic-Guided Hierarchical Search (GODHS), leverages large language models (LLMs) to dynamically infer scene semantics through common sense knowledge. To ensure reliability, we employ a structured prompt design within a language model chain, imposing logical constraints on LLM inputs and outputs. For mobile manipulators, we further introduce a hybrid motion planner that combines polar angle sorting with distance prioritization, minimizing travel while maintaining directional consistency when selecting among multiple candidate poses. Comprehensive evaluations in Isaac Sim demonstrate that our approach significantly increases object search success rates in novel environments and outperforms conventional semantic navigation strategies in terms of path efficiency.
+            Enabling robots to efficiently search for and identify objects in complex, unstructured environments is critical for diverse applications ranging from household assistance to industrial automation. However, traditional scene representations typically capture only static semantics and lack interpretable contextual reasoning, limiting their ability to guide object search in completely unfamiliar settings. To address this challenge, we propose a language-enhanced hierarchical navigation framework that tightly integrates semantic perception and spatial reasoning. Our method, Goal-Oriented Dynamically Heuristic-Guided Hierarchical Search (GODHS), leverages large language models (LLMs) to infer scene semantics and guide the search process through a multi-level decision hierarchy. Reliability in reasoning is achieved through the use of structured prompts and logical constraints applied at each stage of the hierarchy. For the specific challenges of mobile manipulation, we introduce a heuristic-based motion planner that combines polar angle sorting with distance prioritization to efficiently generate exploration paths. Comprehensive evaluations in Isaac Sim demonstrate the feasibility of our framework, showing that GODHS can locate target objects with higher search efficiency compared to conventional, non-semantic search strategies. 
           </p>
         </div>
       </div>
@@ -222,9 +203,9 @@
           <img src="static/images/fig2.png" alt="GODHS Framework" />
           <p><b>Complete Architecture of the GODHS System:</b> First, the user provides the target object through natural language input, which is then processed by a LLM to extract semantic intent. The robot captures geometric data using LiDAR and RGB images via cameras, generating a topological map with room names through the language model. Within the known map, the LLM-driven prioritization ranks rooms based on the likelihood of containing the target object and navigates to them sequentially. Within each room, the robot detects candidate objects through visual object detection, then utilizes the LLM to analyze whether they are carriers and ranks all collected carriers by the probability of containing the target. For each carrier, the LLM plans a hierarchical search strategy: first analyzing geometric features to identify subregions worth searching (top, interior, etc.), then prioritizing and searching these subregions according to probabilities assigned by the LLM. The loop terminates when the LLM verifies target recognition through visual-language grounding of sensor data.</p>
           
-          <h3 class="title is-4">Model Chain Design</h3>
-          <img src="static/images/fig3.png" alt="Model Chain Design" />
-          <p><b>Chain-of-Refinement (Left):</b> Data Cleaning and Correcting ensure the input and output are structurally valid and semantically coherent, while Processing executes the core task with Knowledge as Augmentation and Feedback to guarantee the result.<br>
+          <h3 class="title is-4">Model Chain and Prompt Design</h3>
+          <img src="static/images/fig3.png" alt="Model Chain and Prompt Design" />
+          <p><b>LLM Reasoning Process (Left):</b> Data Cleaning and Correcting ensure the input and output are structurally valid and semantically coherent, while Processing executes the core task with Knowledge as Augmentation and Feedback to guarantee the result.<br>
           <b>Prompt Design (Right):</b> Input embedding receives the input information, output constraints standardize lexico-syntactic results, task instructions describe goal-oriented content, feature description provides constrained descriptions of features, and there are also additional information and examples.</p>
           
           <h3 class="title is-4">Pose Dictionary Estimation</h3>
@@ -371,13 +352,6 @@
            <div class="item">
              <!-- Your image here -->
              <img src="static/images/tab2.png" alt="MY ALT TEXT"/>
-             <h2 class="subtitle has-text-centered">
-              The performance differences among three chain configurations across five tasks are as follows: Room Reasoning shows minimal variation across configurations due to its single-output nature. In contrast, Room Sorting, Carrier Classification, and Carrier Sorting exhibit significant performance gains with the Protective step, driven by their high output volume, while Feature Reasoning sees limited improvement due to fewer outputs. Additionally, Carrier Classification, Carrier Sorting, and Feature Reasoning benefit markedly from augmentation due to task complexity and pre-training knowledge gaps, whereas Room Sorting displays an opposite trend.
-             </h2>
-           </div>
-           <div class="item">
-             <!-- Your image here -->
-             <img src="static/images/tab3.png" alt="MY ALT TEXT"/>
              <h2 class="subtitle has-text-centered">
               We evaluate three key performance metrics: the EE Path Length, which represents the ratio of the total EE travel distance to the theoretical shortest EE path; the CH Path Length, defined similarly for the CH poses; and the Execution Time Ratio, which is the ratio of execution time with a lower value indicating better efficiency. Table presents the comparative results, demonstrating that lexicographical sorting effectively reduces EE path length while polar angle sorting significantly improves CH path efficiency. When both strategies are applied, the method achieves the highest optimization in both path length and execution time, confirming its effectiveness in improving motion planning.
             </h2>

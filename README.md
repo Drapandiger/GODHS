@@ -1,10 +1,8 @@
-# Language-Exclusive Mobile Manipulation for Efficient Object Search in Indoor Environments 
+# Language-Enhanced Mobile Manipulation for Efficient Object Search in Indoor Environments
 
 ## links 
 
 - Page Link: [drapandiger.github.io/GODHS/](https://drapandiger.github.io/GODHS/)
-
-- Code Link: [github.com/Drapandiger/GODHS_code/](https://github.com/Drapandiger/GODHS_code/)
 
 ## Contact method 
 
